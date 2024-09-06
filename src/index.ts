@@ -1,13 +1,11 @@
-import { Hero} from "./classes/Hero";
-// import * as HeroClasses from "./classes/Hero";
-// import powers,{Power} from "./data/powers";
-// import { Power } from './data/powers';
+import { printObject, genericFunction } from "./classes/generics";
 
+// printObject( 123 );
+// printObject( new Date() );
+// printObject( {a:1, b:2, c:3} );
+// printObject( [1,2,3,4,5,6,7,8,9,19] );
+// printObject( 'Hola Mundo' );
 
-console.log('Hola Mundo!!!!');
-
-// const ironman = new SuperHero('yuri', 1500,38);
-const ironman = new Hero('yuri', 1,38);
-console.log(ironman);
-console.log(ironman.power );
-
+console.log( genericFunction(3.141618).toFixed(2) )
+console.log( genericFunction( new Date() ).toFixed(2) )
+console.log( genericFunction( 'Hola Mundo' ).toFixed(2) )
