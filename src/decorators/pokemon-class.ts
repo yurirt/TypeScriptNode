@@ -35,12 +35,32 @@ function ChekValidPokemonId(){
     }
 }
 
-
+function readOnly( isWritable: boolean = true ): Function{
+    return function(target:any, propertyKey: string ){
+        const descriptor : PropertyDescriptor = {
+            get(){
+                console.log( this );
+                return 'Yuri';
+            },
+            set(this, val){
+                // console.log(this, val);
+                Object.defineProperty( this, propertyKey, {
+                    value:val, 
+                    writable: !isWritable,
+                    enumerable: false,
+                })
+            }
+            
+        }
+        return descriptor;
+    }
+}
 
 @bloquearPrototipo
 @printToConsoleConditional( false )
 export class Pokemon {
 
+     @readOnly( false )   
      public publicApi: string = 'https://pokeapi.co';
 
     constructor(
@@ -50,7 +70,7 @@ export class Pokemon {
     }
 
     @ChekValidPokemonId()
-    savePokemonToDB(id: numeber) {
+    savePokemonToDB(id: number) {
         console.log(`Pokemon guardado en DB ${ id }`);
     }
 }

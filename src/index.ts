@@ -6,6 +6,7 @@ const charmander = new Pokemon('Charmander');
 
 // console.log(charmander.savePokemonToDB(50));
 
-charmander.savePokemonToDB(5);
-
+// charmander.savePokemonToDB(5);
+charmander.publicApi = 'https://yuri-rojas.com';
+console.log( charmander );
 
