@@ -2,8 +2,10 @@ import { Pokemon } from "./decorators/pokemon-class";
 
 const charmander = new Pokemon('Charmander');
 
-(Pokemon.prototype as any).customName = 'Pikachu';
+// (Pokemon.prototype as any).customName = 'Pikachu';
 
-console.log(charmander);
+// console.log(charmander.savePokemonToDB(50));
+
+charmander.savePokemonToDB(5);
 
 
