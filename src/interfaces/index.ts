@@ -1,6 +1,6 @@
-export { Pokemon } from './pokemon';
+
+
 export { Hero } from "../classes/Hero";
+export { Pokemon } from './pokemon';
 export { Villain } from './villains';
-
-
 
